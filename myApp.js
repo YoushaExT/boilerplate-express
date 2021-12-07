@@ -1,9 +1,10 @@
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 
 
-mainPage = (req, res) => {
-	res.send("Hello Express")
+const mainPage = (req, res) => {
+	const absolutePath = __dirname + '/views/index.html'
+	res.sendFile(absolutePath)
 }
 
 app.get('/', mainPage)

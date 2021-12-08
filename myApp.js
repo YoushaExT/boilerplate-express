@@ -11,5 +11,8 @@ const mainPage = (req, res) => {
 
 app.get('/', mainPage)
 
+app.get('/json', (req, res) => {
+	res.json({"message": "Hello json"})
+})
 
  module.exports = app

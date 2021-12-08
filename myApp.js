@@ -24,8 +24,10 @@ const mainPage = (req, res) => {
 	res.sendFile(absolutePath)
 }
 
-app.get('/', mainPage)
-
+app.get('/:word/echo', (req, res) => {
+	const word = req.params['word']
+	res.json({echo: word})	
+})
 app.get('/json', (req, res) => {
 	if (process.env.MESSAGE_STYLE === 'uppercase') {
 	  response = "Hello World".toUpperCase();
@@ -34,5 +36,6 @@ app.get('/json', (req, res) => {
 	}	
 	res.json({"message": response})
 })
+app.get('/', mainPage)
 
  module.exports = app

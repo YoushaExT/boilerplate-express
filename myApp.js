@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 
-
+const publicPath = `${__dirname}/public`
+app.use(express.static(publicPath))
 const mainPage = (req, res) => {
 	const absolutePath = __dirname + '/views/index.html'
 	res.sendFile(absolutePath)

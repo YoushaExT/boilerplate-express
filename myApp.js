@@ -13,9 +13,10 @@ const mainPage = (req, res) => {
 app.get('/', mainPage)
 
 app.get('/json', (req, res) => {
-	let response = 'Hello Json'
 	if (process.env.MESSAGE_STYLE === 'uppercase') {
-		response = response.toUpperCase()
+	  response = "Hello World".toUpperCase();
+	} else {
+	  response = "Hello World";
 	}	
 	res.json({"message": response})
 })
